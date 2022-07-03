@@ -1,13 +1,13 @@
 #!/bin/sh
 # pull 
-docker pull tomcat:jdk8-corretto   
+docker pull itaimalek/rickandmorty:latest   
 #run 
-docker run -itd --name tomcat -e RUN="TRUE" -p 8000:8080 tomcat:jdk8-corretto
+docker run -itd --name noaimg -e RUN="TRUE" -p8080:8000 itaimalek/rickandmorty:latest
 #stop 
-docker stop tomcat
+docker stop noaimg
 #delete 
-docker rm tomcat
+docker rmi noaimg
 #re-tag 
-docker tag tomcat:jdk8-corretto n038060222/homework1:tomcat
+docker tag itaimalek/rickandmorty:latest n038060222/homework1:noaimg
 #push
-docker push n038060222/homework1:tomcat
+docker push n038060222/homework1:noaimg
